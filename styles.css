@@ -178,7 +178,7 @@ Quick Links
 .quick-links ul li {
     display: inline-block;
     margin: 0;
-    padding: 0 5% 0 0;
+    padding: 0 2.5% 0 2.5%;
 }
 
 .quick-links ul li a {
@@ -189,7 +189,7 @@ Quick Links
 .quick-links ul li a:hover {
     color: white;
     text-decoration: underline;
-    text-decoration-color: #2522FF;
+    text-decoration-color: rgba(100, 16, 255, 1);
     text-underline-offset: 20%;
 }
 
@@ -204,7 +204,6 @@ Figures
 }
 
 .project-figs {
-    padding-top: 60px;
     display: flex;
     justify-content: space-between; 
     align-items: baseline;
@@ -219,14 +218,99 @@ Figures
     box-sizing: border-box; 
 }
 
+.project-figs figure #projects {
+    flex: 1 1 calc(33.3333% - 40px); 
+    max-width: calc(33.3333% - 40px); 
+}
+
+.project-figs figure::after {
+    content: ''; /* allows the pseudo element to render */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(100, 16, 255, 0.534);
+    opacity: 0; 
+    transition: opacity 0.7s ease; 
+
+    pointer-events: none; /* make sure to not stop mouse events */
+    z-index: 1;
+}
+
+.project-figs figure:hover::after {
+    opacity: 1;
+  }
+
 .project-figs figure img {
     width: 100%;
     height: auto; 
 }
 
-.project-figs figure figcaption {
-    font-size: 1.5rem;
-    padding: 5% 0% 10% 0%;
+.project-figs figcaption {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    
+    opacity: 0;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'title-font';
+    text-transform: uppercase;
+    font-weight: bolder;
+
+    pointer-events: none; /* make sure to not stop mouse events */
+    transform: translate(0, 0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+  }
+  
+  .project-figs figure:hover figcaption {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+
+
+/******************
+
+Footer
+
+******************/
+
+footer {
+    background:black;
+    padding: 0px 0px 50px 0px;
+    margin: 0;
+    margin-top: auto;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 25px 0 25px;
+}
+
+footer ul li a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #2522FF;
+    text-underline-offset: 20%;
 }
 
 
