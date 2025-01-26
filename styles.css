@@ -1,0 +1,289 @@
+/******************
+
+base
+
+******************/
+
+* {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Garet';
+    src: url("assets/fonts/Garet-Book.ttf");
+}
+
+@font-face {
+    font-family: 'Gontserrat-Light';
+    src: url("assets/fonts/Gontserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: 'Gontserrat-SemiBold';
+    src: url("assets/fonts/Gontserrat-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: 'Xolonium-Regular';
+    src: url("assets/fonts/Xolonium-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'title-font';
+    src: url("assets/fonts/Helmet-Regular.ttf");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    background-color: black;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Garet', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-page {
+    background-image: url("assets/images/gray_void_background.jpg");
+}
+
+h1, h2, h3 {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.title {
+    font-family: 'title-font';
+    font-size: 8rem;
+    text-align: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+}
+
+.mini-title {
+    font-family: 'title-font';
+    font-size: 3rem;
+    text-align: center;
+    padding: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+}
+
+.fade-up {
+    animation: fadeUp ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeUp{
+    0% {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.fade-down {
+    animation: fadeDown ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeDown{
+    0% {
+        opacity: 0;
+        transform: translateY(-30px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+
+/******************
+
+Default section template
+
+******************/
+
+section.textsection {
+    padding:80px;
+}
+
+section.textsection h2{
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 30px;
+    line-height: 200%;
+    font-size: 1.2rem;
+    color: #919191
+}
+
+section.lightsection {
+    background-color: black;
+}
+
+/* bold and also changes font color */
+b {
+    color: #ffffff;
+    font-family: Gontserrat-SemiBold, Helvetica, Arial, sans-serif;
+}
+
+strong {
+    font-family: Gontserrat-SemiBold, Helvetica, Arial, sans-serif;
+}
+
+.videos {
+    display: block;
+    margin:0 auto;
+    text-align: center;
+}
+
+
+/******************
+
+Quick Links
+
+******************/
+
+.quick-links h1 {
+    text-align: center;
+    margin: 0;
+    margin-top: auto;
+    color: white;
+    font-weight: bolder;
+}
+
+.quick-links ul li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 5% 0 0;
+}
+
+.quick-links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.quick-links ul li a:hover {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #2522FF;
+    text-underline-offset: 20%;
+}
+
+/******************
+
+Figures
+
+******************/
+
+.projects {
+    padding: 0% 20% 7% 20%;
+}
+
+.project-figs {
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: baseline;
+    flex-wrap: wrap; 
+    gap: 40px; 
+}
+
+.project-figs figure {
+    text-align: center;
+    flex: 1 1 calc(33.3333% - 40px); 
+    max-width: calc(33.3333% - 40px); 
+    box-sizing: border-box; 
+}
+
+.project-figs figure img {
+    width: 100%;
+    height: auto; 
+}
+
+.project-figs figure figcaption {
+    font-size: 1.5rem;
+    padding: 5% 0% 10% 0%;
+}
+
+
+
+
+/******************
+
+Responsive design for Mobile
+
+*******************/
+
+@media screen and (max-width: 1800px) {
+    .event-figs img{
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+
+/* breakpoint to make psl info look goofy */
+@media screen and (max-width: 1500px) {
+    .psl-info {
+        display: inline-block;
+    }
+
+    #trailer {
+        text-align: center;
+        margin-top: 5%;
+    }
+}
+
+/* banner breakpoint */
+@media screen and (max-width: 1350px) {
+    #banner-tagline{
+        padding-top: 50px;
+    }
+
+    section.textsection h2 {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .event-figs img {
+        max-width: 600px;
+        max-height: 600px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    #banner-tagline {
+        padding-top: 200px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .event-figs img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
