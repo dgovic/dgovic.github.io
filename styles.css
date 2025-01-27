@@ -60,12 +60,17 @@ h1, h2, h3 {
 
 a {
     text-decoration: none;
+    color: #78e4ff
+}
+
+h1 a {
     color: inherit;
 }
 
 ul {
     padding: 0;
 }
+
 
 
 .title {
@@ -135,7 +140,7 @@ section.textsection {
 }
 
 section.textsection h2{
-    text-align: center;
+    text-align: left;
     padding-left: 15%;
     padding-right: 15%;
     padding-bottom: 30px;
@@ -244,7 +249,7 @@ Figures
     z-index: 1;
 }
 
-.project-figs figure:hover::after {
+.project-figs figure:not(#EE):hover::after {
     opacity: 1;
   }
 
@@ -253,7 +258,7 @@ Figures
     height: auto; 
 }
 
-.project-figs figcaption {
+.project-figs figcaption:not(#EE) {
     position: absolute;
     top: 50%;
     left: 0;
@@ -273,7 +278,7 @@ Figures
     z-index: 2;
   }
   
-  .project-figs figure:hover figcaption {
+  .project-figs figure:hover figcaption:not(#EE) {
     opacity: 1;
     transform: translate(0, -50%);
   }
@@ -319,6 +324,9 @@ footer ul li a:hover {
 }
 
 
+.left-align {
+    text-align: left;
+}
 
 
 /******************
